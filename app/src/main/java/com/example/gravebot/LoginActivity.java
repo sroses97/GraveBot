@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,9 +20,11 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     Animation rotateAnimation;
-    //private Handler mHandler = new Handler();
+
     private ImageView imageView;
     private Button button;
+
+    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +38,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
         imageView = (ImageView) findViewById(R.id.imageView);
-        TextView username = (TextView) findViewById(R.id.txtUserName);
-        TextView password = (TextView) findViewById(R.id.txtPassword);
+        EditText username = (EditText) findViewById(R.id.txtUserName);
+        EditText password = (EditText) findViewById(R.id.txtPassword);
         button = (Button) findViewById(R.id.btnLogin);
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
                 //only able to login with u:admin pass:admin
                 if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
@@ -82,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void openMainMenu() {
         Intent i = new Intent(this, MainMenu.class);
+
         startActivity(i);
     }
 }

@@ -34,13 +34,15 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageHome"
                 android:layout_width="83dp"
                 android:layout_height="66dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="30dp"
                 android:alpha="0.4"
-                app:srcCompat="@drawable/logo_plane" />
+                android:clickable="true"
+                app:srcCompat="@drawable/logo_plane"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 

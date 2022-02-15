@@ -8,10 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity {
 
-    private Button button_ManuelMode;
+    private Button button_ManualMode;
     private Button button_AutomaticMode;
 
     @Override
@@ -25,7 +26,7 @@ public class MainMenu extends AppCompatActivity {
 
         setContentView(R.layout.activity_main_menu);
 
-        button_ManuelMode = (Button) findViewById(R.id.btnManualMode);
+        button_ManualMode = (Button) findViewById(R.id.btnManualMode);
         button_AutomaticMode = (Button) findViewById(R.id.btnAutomaticMode);
 
         button_AutomaticMode.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +37,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        button_ManuelMode.setOnClickListener(new View.OnClickListener() {
+        button_ManualMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openManualMode();

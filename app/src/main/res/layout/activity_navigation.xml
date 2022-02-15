@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="103dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/imageButtonForward"
@@ -31,13 +31,15 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageHome"
             android:layout_width="83dp"
             android:layout_height="66dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:alpha="0.4"
-            app:srcCompat="@drawable/logo_plane" />
+            android:clickable="true"
+            app:srcCompat="@drawable/logo_plane"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -45,12 +47,13 @@
         android:id="@+id/imageButtonRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginEnd="36dp"
         android:background="@null"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -58,6 +61,7 @@
         android:id="@+id/imageButtonBack"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="196dp"
         android:background="@null"
         android:rotation="90"
         android:scaleType="centerCrop"
@@ -65,8 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.196"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -74,16 +76,15 @@
         android:id="@+id/imageButtonForward"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="224dp"
         android:background="@null"
         android:longClickable="false"
         android:rotation="-90"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -91,29 +92,15 @@
         android:id="@+id/imageButtonLeft"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="36dp"
         android:background="@null"
         android:rotation="180"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="111dp"
-        android:layout_height="103dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="314dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="314dp"
-        android:alpha="0.4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_plane" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

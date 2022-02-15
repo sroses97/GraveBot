@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainMenu">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:progress="60" />
+
+    <TextView
+        android:id="@+id/txtWaterLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        tools:text="60%" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -13,8 +38,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/txtMainMenu"
@@ -38,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Hello @string.username "
+            android:text="Hello "
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -71,9 +98,14 @@
             android:backgroundTintMode="add"
             android:text="Manual Mode"
             android:textColor="#203B6C"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="20dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -82,6 +114,11 @@
             android:layout_gravity="center"
             android:alpha="0.4"
             app:srcCompat="@drawable/logo_plane" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="15dp" />
 
         <Button
             android:id="@+id/btnAutomaticMode"
@@ -93,39 +130,25 @@
             android:backgroundTintMode="add"
             android:text="Follow Me"
             android:textColor="#203B6C"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="20dp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="15dp" />
+            android:minHeight="72dp" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="For the battery and water levels check the bars below: "
-            android:textColor="#050505"
-            android:textSize="20sp" />
-
-        <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="15dp" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="178dp"
-            android:layout_marginBottom="15dp"
-            android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/level" />
+            android:gravity="center"
+            android:text="Water level:    "
+            android:textColor="#203B6C"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
