@@ -9,51 +9,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/txtTitle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="0"
+            android:background="#66F4B183"
+            android:fontFamily="sans-serif"
+            android:minHeight="65dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
+            android:text="Automatic Mode"
+            android:textColor="#203B6C"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif"
-                android:text="Automatic Mode"
-                android:textColor="#000000"
-                android:textSize="28sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:height="3dp"
+            android:background="#CCF4B183" />
 
-            <ImageView
-                android:id="@+id/imageHome"
-                android:layout_width="83dp"
-                android:layout_height="66dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:alpha="0.4"
-                android:clickable="true"
-                app:srcCompat="@drawable/logo_plane"
-                tools:ignore="SpeakableTextPresentCheck" />
+        <WebView
+            android:id="@+id/wVStream"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
 
-        </LinearLayout>
+        </WebView>
+
+        <Button
+            android:id="@+id/btnTerminateAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="#F4B183"
+            android:backgroundTintMode="add"
+            android:text="MAIN MANU"
+            android:textColor="#203B6C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="10dp" />
-
-        <VideoView
-            android:id="@+id/videoView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_weight="1" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

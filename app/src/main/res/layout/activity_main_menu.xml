@@ -7,10 +7,11 @@
     tools:context=".MainMenu">
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar_water"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="30dp"
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/progress_bar"
@@ -25,11 +26,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_water"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_water"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_water"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_water"
         tools:text="60%" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_electricity"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/progress_bar_el"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressBar_water"
+        tools:progress="100" />
+
+    <TextView
+        android:id="@+id/txtElectricityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_electricity"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar_electricity"
+        app:layout_constraintStart_toStartOf="@+id/progressBar_electricity"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_electricity"
+        tools:text="100%" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -43,17 +68,45 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/txtMainMenu"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif"
-            android:text="Main Menu"
-            android:textColor="#000000"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtMainMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#66F4B183"
+                android:fontFamily="sans-serif"
+                android:minHeight="65dp"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:text="Main Menu"
+                android:textColor="#203B6C"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imgBtnProfil"
+                android:layout_width="98dp"
+                android:layout_height="match_parent"
+                android:background="#F4B183"
+                android:backgroundTint="#66F4B183"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:minHeight="60dp"
+                app:srcCompat="@drawable/profil"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="3dp"
+            android:background="#CCF4B183" />
 
         <Space
             android:layout_width="match_parent"
@@ -62,12 +115,12 @@
 
         <TextView
             android:id="@+id/txtUsername"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Hello "
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
@@ -78,10 +131,11 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif"
             android:text="Please choose the wished movement mode:"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textColor="#203B6C"
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -128,7 +182,7 @@
             android:layout_marginEnd="40dp"
             android:backgroundTint="#F4B183"
             android:backgroundTintMode="add"
-            android:text="Follow Me"
+            android:text="Automatic Mode"
             android:textColor="#203B6C"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -137,17 +191,36 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="72dp" />
+            android:minHeight="48dp" />
 
-        <TextView
-            android:id="@+id/textView3"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Water level:    "
-            android:textColor="#203B6C"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Water level: "
+                android:textColor="#203B6C"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Electricity level:    "
+                android:textColor="#F4B183"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

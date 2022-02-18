@@ -4,102 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#F4B183"
+    android:backgroundTint="#CCF4B183"
     tools:context=".NavigationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="103dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageButtonForward"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
+            android:layout_weight="0"
+            android:background="#66F4B183"
             android:fontFamily="sans-serif"
+            android:minHeight="65dp"
+            android:paddingStart="10dp"
+            android:paddingTop="20dp"
             android:text="Manual Mode"
-            android:textColor="#000000"
+            android:textColor="#203B6C"
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageHome"
-            android:layout_width="83dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:alpha="0.4"
-            android:clickable="true"
-            app:srcCompat="@drawable/logo_plane"
-            tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:height="3dp"
+            android:background="#CCF4B183" />
 
+        <WebView
+            android:id="@+id/wVStream"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_weight="0" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/imageButtonRight"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="36dp"
-        android:background="@null"
-        android:scaleType="centerCrop"
+    <ImageView
+        android:id="@+id/imageHome"
+        android:layout_width="111dp"
+        android:layout_height="103dp"
+        android:alpha="0.4"
+        android:clickable="true"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518"
+        app:layout_constraintVertical_bias=".78"
+        app:srcCompat="@drawable/logo_plane"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btnTerminateManual"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#F4B183"
+        android:backgroundTintMode="add"
+        android:text="MAIN MENU"
+        android:textColor="#203B6C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toStartOf="@+id/btnRight"
+        app:layout_constraintStart_toEndOf="@+id/btnLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btnForward" />
+
+    <ImageButton
+        android:id="@+id/btnLeft"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@null"
+        android:rotation="180"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageHome"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".78"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonBack"
+        android:id="@+id/btnForward"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="196dp"
+        android:background="@null"
+        android:longClickable="false"
+        android:rotation="-90"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/imageHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".95"
+        app:srcCompat="@drawable/arrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@null"
         android:rotation="90"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageHome"
+        app:layout_constraintVertical_bias=".5"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/imageButtonForward"
+        android:id="@+id/btnRight"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="10dp"
         android:background="@null"
-        android:longClickable="false"
-        android:rotation="-90"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButtonLeft"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="36dp"
-        android:background="@null"
-        android:rotation="180"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toEndOf="@+id/imageHome"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518"
+        app:layout_constraintVertical_bias=".78"
         app:srcCompat="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
 
